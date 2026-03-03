@@ -11,229 +11,204 @@
         .brand-font { font-family: 'Montserrat', sans-serif; }
         .black-header { background-color: #000000; }
         
-        /* Navigation & Page Logic */
         .page-content { display: none; min-height: 85vh; width: 100%; }
         .active { display: block; }
         .text-black-force { color: #000000 !important; }
 
-        /* Contact Card Styles (Executive Branding) */
+        /* Perfect Vertical Alignment for Contact Cards */
         .contact-card {
             border-left: 10px solid #121619;
-            padding-left: 18px;
+            padding-left: 20px;
             width: 100%;
-            max-width: 450px;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
         .contact-name {
             font-family: 'Arial Black', Gadget, sans-serif;
-            font-size: 22px;
+            font-size: 1.5rem;
             font-weight: 900;
             color: #121619;
-            margin: 0;
-            letter-spacing: 0.5px;
             text-transform: uppercase;
+            line-height: 1.1;
         }
         .contact-title {
-            font-family: 'Arial', sans-serif;
-            font-size: 12px;
-            color: #444;
-            margin: 4px 0 15px 0;
+            font-size: 0.75rem;
+            color: #666;
             text-transform: uppercase;
-            font-weight: 600;
-        }
-        .info-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #000;
-        }
-        .contact-icon { width: 22px; margin-right: 12px; font-size: 18px; }
-
-        /* Responsive adjustments for large screens */
-        @media (min-width: 768px) {
-            .contact-name { font-size: 26px; }
-            .contact-card { padding-left: 25px; }
+            letter-spacing: 1px;
+            margin-top: 4px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body class="bg-white">
 
-    <header class="black-header sticky top-0 z-[100] text-white">
-        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <a href="javascript:void(0)" onclick="showPage('home')" class="text-xl md:text-2xl font-black tracking-tighter brand-font uppercase">
+    <header class="black-header sticky top-0 z-[100] text-white shadow-2xl">
+        <nav class="container mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="javascript:void(0)" onclick="showPage('home')" class="text-2xl font-black tracking-tighter brand-font uppercase">
                 RAR <span class="text-sky-500">CHEMICALS</span>
             </a>
-            <div class="flex space-x-4 md:space-x-8 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-sky-400 transition">Home</a>
-                <a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-sky-400 transition">About</a>
-                <a href="javascript:void(0)" onclick="showPage('catalysts')" class="hover:text-sky-400 transition">Products</a>
-                <a href="javascript:void(0)" onclick="showPage('contact')" class="bg-sky-500 text-black px-4 py-2 rounded hover:bg-white transition">Contact</a>
+            
+            <div class="flex items-center space-x-6 md:space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] mt-4 md:mt-0">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-sky-400 transition-colors border-b-2 border-transparent hover:border-sky-500 pb-1">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-sky-400 transition-colors border-b-2 border-transparent hover:border-sky-500 pb-1">About</a>
+                <a href="javascript:void(0)" onclick="showPage('catalysts')" class="hover:text-sky-400 transition-colors border-b-2 border-transparent hover:border-sky-500 pb-1">Products</a>
+                <a href="javascript:void(0)" onclick="showPage('contact')" class="bg-sky-500 text-black px-5 py-2 rounded-sm hover:bg-white transition-all transform active:scale-95">Contact</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="page-content active py-12 md:py-24">
-            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-5xl md:text-7xl font-black brand-font leading-tight mb-6 text-black-force uppercase">RAR <br>CHEMICALS</h1>
-                    <p class="text-xl text-black-force mb-8 italic">"React & Refine: The standard in industrial adsorbents."</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="showPage('catalysts')" class="px-8 py-4 bg-black text-white font-bold rounded hover:bg-slate-800 transition">Explore Products</button>
-                        <button onclick="showPage('about')" class="px-8 py-4 border-2 border-black font-bold rounded hover:bg-black hover:text-white transition text-black-force">Our History</button>
+    <main class="container mx-auto max-w-7xl px-6">
+        
+        <section id="home" class="page-content active py-16 md:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="text-left">
+                    <h1 class="text-6xl md:text-8xl font-black brand-font leading-[0.9] mb-8 text-black-force uppercase tracking-tighter">
+                        REACT &<br>REFINE
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-10 max-w-md font-medium">The global standard in high-performance industrial adsorbents and catalyst carriers.</p>
+                    <div class="flex flex-wrap gap-5">
+                        <button onclick="showPage('catalysts')" class="px-10 py-5 bg-black text-white font-bold uppercase text-xs tracking-widest hover:bg-sky-600 transition-all">View Catalog</button>
+                        <button onclick="showPage('about')" class="px-10 py-5 border-2 border-black font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all">Our Story</button>
                     </div>
                 </div>
-                <div class="bg-white p-8 md:p-12 shadow-2xl border-t-8 border-black">
-                    <h3 class="text-5xl md:text-6xl font-black mb-2 text-black-force">70%</h3>
-                    <p class="text-xs md:text-sm uppercase tracking-widest font-bold text-black-force">Market Presence Of Activated Alumina</p>
-                    <hr class="my-6 border-slate-200">
-                    <p class="text-black-force font-light italic text-sm leading-relaxed">Leading the EMEA region in molecular innovation and high-purity chemical processing.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="page-content py-12 md:py-24">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <h1 class="text-4xl font-black brand-font mb-8 border-b-4 border-sky-500 inline-block text-black-force uppercase">About Us</h1>
-                <p class="text-xl md:text-2xl leading-relaxed text-black-force mb-6 font-semibold">RAR Chemicals Pvt. Ltd. is a premier manufacturer and supplier of high-performance industrial adsorbents.</p>
-                <div class="space-y-6 text-lg text-black-force opacity-90 leading-relaxed">
-                    <p>Founded on the principles of engineering excellence, we provide critical solutions for refineries, petrochemical plants, and gas processing units worldwide.</p>
-                    <p>Our focus is on maximizing process efficiency and equipment lifespan through advanced materials like Activated Alumina, specialized Chlorine Guards, and high-purity Catalyst Carriers.</p>
+                <div class="bg-slate-50 p-10 md:p-16 border-l-[12px] border-black shadow-sm">
+                    <span class="text-sky-500 font-black text-sm tracking-widest uppercase">Market Leadership</span>
+                    <h3 class="text-7xl font-black mb-4 text-black-force">70%</h3>
+                    <p class="text-sm uppercase tracking-[0.2em] font-bold text-slate-500 mb-6">EMEA Regional Presence</p>
+                    <p class="text-black-force font-medium italic leading-relaxed border-t pt-6 border-slate-200">
+                        Pioneering molecular innovation for spent catalyst regeneration and petrochemical efficiency.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="catalysts" class="page-content py-12 md:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-5xl font-black text-center mb-16 brand-font text-black-force uppercase">Specialized Solutions</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col">
-                        <img src="activated_alumina.jpg" class="w-full h-56 object-cover">
-                        <div class="p-8 flex-grow">
-                            <h3 class="text-xl font-black mb-4 text-black-force uppercase">Activated Alumina</h3>
-                            <p class="text-sm text-slate-600 mb-6">Superior moisture and impurity adsorption with high surface area and mechanical strength.</p>
-                            <button onclick="showUses('alumina')" class="w-full py-3 bg-black text-white font-bold rounded uppercase text-xs tracking-widest">Technical Data</button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col">
-                        <img src="chlorine_guard.jpg" class="w-full h-56 object-cover">
-                        <div class="p-8 flex-grow">
-                            <h3 class="text-xl font-black mb-4 text-black-force uppercase">Chlorine Guards</h3>
-                            <p class="text-sm text-slate-600 mb-6">Engineered to neutralize acidic chlorides and prevent refinery equipment corrosion.</p>
-                            <button onclick="showUses('chlorine')" class="w-full py-3 bg-black text-white font-bold rounded uppercase text-xs tracking-widest">Technical Data</button>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col">
-                        <img src="catalyst_carriers.jpg" class="w-full h-56 object-cover">
-                        <div class="p-8 flex-grow">
-                            <h3 class="text-xl font-black mb-4 text-black-force uppercase">Catalyst Carriers</h3>
-                            <p class="text-sm text-slate-600 mb-6">High-purity support materials providing thermal stability and structural integrity.</p>
-                            <button onclick="showUses('carriers')" class="w-full py-3 bg-black text-white font-bold rounded uppercase text-xs tracking-widest">Technical Data</button>
-                        </div>
-                    </div>
+        <section id="about" class="page-content py-16 md:py-24">
+            <div class="max-w-4xl">
+                <h2 class="text-xs font-bold tracking-[0.4em] text-sky-600 uppercase mb-4">The RAR Standard</h2>
+                <h1 class="text-4xl md:text-6xl font-black brand-font mb-10 text-black-force uppercase">About Us</h1>
+                <div class="space-y-8 text-xl text-slate-700 leading-relaxed">
+                    <p class="font-bold text-black border-l-4 border-black pl-6">
+                        RAR Chemicals Pvt. Ltd. is a premier manufacturer and supplier of high-performance industrial adsorbents.
+                    </p>
+                    <p>
+                        We bridge the gap between complex chemical engineering and practical industrial application. Our specialized Activated Alumina and Chlorine Guards are engineered to protect multi-million dollar refinery equipment from corrosion and inefficiency.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="page-content py-12 md:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-black mb-12 brand-font text-black-force uppercase">Leadership Team</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                    <div class="contact-card">
-                        <h1 class="contact-name">DARREN CHETTIAR</h1>
-                        <p class="contact-title">Chief Executive Officer</p>
-                        <div class="info-row"><span class="contact-icon">📞</span><span>+ 91 90224 30219</span></div>
-                        <div class="info-row"><span class="contact-icon">✉️</span><span>darrenchettiar.in@gmail.com</span></div>
+        <section id="catalysts" class="page-content py-16 md:py-24">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-black brand-font text-black-force uppercase">Specialized Products</h2>
+                <div class="h-2 w-24 bg-sky-500 mx-auto mt-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group cursor-pointer" onclick="showUses('alumina')">
+                    <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
+                        <img src="activated_alumina.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
-                    <div class="contact-card">
-                        <h1 class="contact-name">RYAN CHETTIAR</h1>
-                        <p class="contact-title">Chief Executive Officer</p>
-                        <div class="info-row"><span class="contact-icon">📞</span><span>+ 91 9325 38659</span></div>
-                        <div class="info-row"><span class="contact-icon">✉️</span><span>ryanchettiar.in@gmail.com</span></div>
-                    </div>
-                    <div class="contact-card">
-                        <h1 class="contact-name">AADAN CHETTIAR</h1>
-                        <p class="contact-title">Chief Executive Officer</p>
-                        <div class="info-row"><span class="contact-icon">📞</span><span>+ 91 88500 88922</span></div>
-                        <div class="info-row"><span class="contact-icon">✉️</span><span>aadanchettiar.in@gmail.com</span></div>
-                    </div>
-                    <div class="contact-card">
-                        <h1 class="contact-name">RAMON CHETTIAR</h1>
-                        <p class="contact-title">Chief Executive Officer</p>
-                        <div class="info-row"><span class="contact-icon">📞</span><span>+ 91 86572 62715</span></div>
-                        <div class="info-row"><span class="contact-icon">✉️</span><span>ramonchettiar.in@gmail.com</span></div>
-                    </div>
+                    <h3 class="text-xl font-black uppercase mb-2">Activated Alumina</h3>
+                    <p class="text-sm text-slate-500 mb-4">High-porosity moisture adsorption.</p>
+                    <span class="text-xs font-bold text-sky-600 tracking-widest uppercase">Explore Technical Uses →</span>
                 </div>
-
-                <div class="mt-12 pt-12 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="border-l-4 pl-4 border-sky-500">
-                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Corporate Headquarters</h4>
-                        <p class="text-sm font-bold text-black-force uppercase">OFFICE NO. 3 TAKPADA MAKWANA ROAD, MUMBAI 400059.</p>
+                <div class="group cursor-pointer" onclick="showUses('chlorine')">
+                    <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
+                        <img src="chlorine_guard.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
-                    <div class="border-l-4 border-black pl-4">
-                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">General Inquiries</h4>
-                        <p class="text-sm font-bold text-black-force">rarchemicalspvtltd.in@gmail.com</p>
+                    <h3 class="text-xl font-black uppercase mb-2">Chlorine Guards</h3>
+                    <p class="text-sm text-slate-500 mb-4">Anti-corrosion neutralizing agents.</p>
+                    <span class="text-xs font-bold text-sky-600 tracking-widest uppercase">Explore Technical Uses →</span>
+                </div>
+                <div class="group cursor-pointer" onclick="showUses('carriers')">
+                    <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
+                        <img src="catalyst_carriers.jpg"w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
+                    <h3 class="text-xl font-black uppercase mb-2">Catalyst Carriers</h3>
+                    <p class="text-sm text-slate-500 mb-4">Structural skeletons for catalysts.</p>
+                    <span class="text-xs font-bold text-sky-600 tracking-widest uppercase">Explore Technical Uses →</span>
                 </div>
             </div>
         </section>
 
-        <section id="uses" class="page-content py-12 md:py-24 container mx-auto px-6">
-            <h1 id="uses-title" class="text-3xl md:text-4xl font-black mb-4 text-black-force uppercase"></h1>
-            <p id="uses-description" class="text-lg text-slate-600 mb-8 italic"></p>
-            <ul id="uses-list" class="list-disc pl-6 space-y-4 text-lg text-black-force"></ul>
-            <button onclick="showPage('catalysts')" class="mt-12 font-bold text-sky-600 hover:text-black flex items-center gap-2">
-                <span>&larr;</span> Return to Products
-            </button>
+        <section id="contact" class="page-content py-16 md:py-24">
+            <h2 class="text-4xl md:text-6xl font-black mb-16 brand-font text-black-force uppercase">Contact Team</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
+                <div class="contact-card">
+                    <h1 class="contact-name">DARREN CHETTIAR</h1>
+                    <p class="contact-title">Chief Executive Officer</p>
+                    <div class="flex flex-col space-y-2 text-sm font-semibold">
+                        <span>📞 +91 90224 30219</span>
+                        <span>✉️ darrenchettiar.in@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h1 class="contact-name">RYAN CHETTIAR</h1>
+                    <p class="contact-title">Chief Executive Officer</p>
+                    <div class="flex flex-col space-y-2 text-sm font-semibold">
+                        <span>📞 +91 9325 38659</span>
+                        <span>✉️ ryanchettiar.in@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h1 class="contact-name">AADAN CHETTIAR</h1>
+                    <p class="contact-title">Chief Executive Officer</p>
+                    <div class="flex flex-col space-y-2 text-sm font-semibold">
+                        <span>📞 +91 88500 88922</span>
+                        <span>✉️ aadanchettiar.in@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h1 class="contact-name">RAMON CHETTIAR</h1>
+                    <p class="contact-title">Chief Executive Officer</p>
+                    <div class="flex flex-col space-y-2 text-sm font-semibold">
+                        <span>📞 +91 86572 62715</span>
+                        <span>✉️ ramonchettiar.in@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-10 border-t-2 border-slate-100 flex flex-col md:flex-row gap-12">
+                <div class="flex-1">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-sky-600 mb-2">Headquarters</h4>
+                    <p class="text-sm font-bold uppercase">OFFICE NO. 3 TAKPADA MAKWANA ROAD, MUMBAI 400059.</p>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">General Inquiry</h4>
+                    <p class="text-sm font-bold">rarchemicalspvtltd.in@gmail.com</p>
+                </div>
+            </div>
         </section>
+
+        <section id="uses" class="page-content py-16 md:py-24">
+            <button onclick="showPage('catalysts')" class="mb-10 font-bold text-sky-600 uppercase text-xs tracking-widest hover:text-black">← Back to Products</button>
+            <h1 id="uses-title" class="text-4xl md:text-6xl font-black mb-8 text-black-force uppercase"></h1>
+            <ul id="uses-list" class="space-y-6 text-xl text-black-force border-l-4 border-sky-500 pl-8"></ul>
+        </section>
+
     </main>
 
-    <footer class="py-10 bg-black text-center text-slate-500 text-[9px] md:text-[11px] uppercase tracking-[0.3em]">
-        &copy; 2026 RAR Chemicals Pvt. Ltd. | Industrial Adsorbents & Solutions
+    <footer class="mt-20 py-12 bg-black text-center text-slate-600 text-[10px] uppercase tracking-[0.5em]">
+        &copy; 2026 RAR Chemicals Pvt. Ltd. | Molecular Innovation
     </footer>
 
     <script>
-        // Data for technical use cases
-        const productData = {
-            'alumina': { 
-                title: 'Activated Alumina Applications', 
-                description: 'Industrial desiccant for drying gases and air.',
-                points: ['Drying of Industrial Air and Gases', 'Fluoride and Arsenic removal', 'Acid removal from lubricants'] 
-            },
-            'chlorine': { 
-                title: 'Chlorine Guard Applications', 
-                description: 'Refinery protection against chloride-induced corrosion.',
-                points: ['Neutralizing acidic chlorides', 'Protecting downstream compressors', 'Catalyst poisoning prevention'] 
-            },
-            'carriers': { 
-                title: 'Catalyst Carrier Applications', 
-                description: 'Support medium for active catalytic reactions.',
-                points: ['Selective Hydrogenation support', 'Automotive catalytic converters', 'Fixed-bed reactor mediums'] 
-            }
-        };
-
-        // NAVIGATION LOGIC
         function showPage(pageId) {
-            // Hide all sections
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            // Show the selected section
-            const target = document.getElementById(pageId);
-            if(target) {
-                target.classList.add('active');
-                window.scrollTo(0,0);
-            }
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // DYNAMIC CONTENT LOADING
         function showUses(productId) {
-            const data = productData[productId];
-            document.getElementById('uses-title').innerText = data.title;
-            document.getElementById('uses-description').innerText = data.description;
+            const data = {
+                'alumina': ['Industrial Air Drying', 'Water Purification', 'Arsenic Removal', 'Claus Process Catalyst'],
+                'chlorine': ['Acidic Chloride Neutralization', 'Downstream Compressor Protection', 'Isomerization Protection'],
+                'carriers': ['Selective Hydrogenation', 'Automotive Emission Support', 'Steam Reforming Structural Support']
+            };
             const list = document.getElementById('uses-list');
             list.innerHTML = '';
-            data.points.forEach(p => {
+            document.getElementById('uses-title').innerText = productId.replace('_', ' ');
+            data[productId].forEach(p => {
                 const li = document.createElement('li');
                 li.innerText = p;
                 list.appendChild(li);
@@ -243,4 +218,3 @@
     </script>
 </body>
 </html>
-
