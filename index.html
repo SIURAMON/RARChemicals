@@ -10,45 +10,13 @@
         body { font-family: 'Inter', sans-serif; background-color: white; overflow-x: hidden; }
         .brand-font { font-family: 'Montserrat', sans-serif; }
         .black-header { background-color: #000000; }
+        
         .page-content { display: none; min-height: 85vh; width: 100%; }
         .active { display: block; }
         .text-black-force { color: #000000 !important; }
 
-        .contact-card {
-            border-left: 10px solid #121619;
-            padding-left: 20px;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-        .contact-name {
-            font-family: 'Arial Black', Gadget, sans-serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #121619;
-            text-transform: uppercase;
-            line-height: 1.1;
-        }
-        .contact-title {
-            font-size: 0.75rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-            margin-bottom: 1rem;
-        }
-
-        /* Custom Input Styling */
-        .form-input {
-            width: 100%;
-            border-bottom: 2px solid #000;
-            padding: 12px 0;
-            background: transparent;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .form-input:focus {
-            border-color: #0ea5e9;
-        }
+        /* Styling for Inquiry Inputs */
+        input:focus, textarea:focus { border-color: #0ea5e9; }
     </style>
 </head>
 <body class="bg-white">
@@ -79,7 +47,7 @@
                     <p class="text-xl text-slate-600 mb-10 max-w-md font-medium">The global standard in high-performance industrial adsorbents and catalyst carriers.</p>
                     <div class="flex flex-wrap gap-5">
                         <button onclick="showPage('catalysts')" class="px-10 py-5 bg-black text-white font-bold uppercase text-xs tracking-widest hover:bg-sky-600 transition-all">View Products</button>
-                        <button onclick="showPage('inquiry')" class="px-10 py-5 border-2 border-black font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all">Request Quote</button>
+                        <button onclick="showPage('about')" class="px-10 py-5 border-2 border-black font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all">Our Story</button>
                     </div>
                 </div>
                 <div class="bg-slate-50 p-10 md:p-16 border-l-[12px] border-black shadow-sm">
@@ -113,96 +81,58 @@
                 <div class="h-2 w-24 bg-sky-500 mx-auto mt-6"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="group border-b-2 border-transparent hover:border-sky-500 transition-all pb-6">
+                <div class="group">
                     <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
-                        <img src="activated_alumina.jpg" alt="Activated Alumina" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
+                        <img src="activated_alumina.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-black uppercase mb-2">Activated Alumina</h3>
-                    <p class="text-sm text-slate-500 mb-6">Optimized for high-porosity moisture adsorption and Claus Process applications.</p>
-                    <button onclick="showPage('inquiry')" class="text-xs font-bold text-sky-600 tracking-widest uppercase hover:text-black">Inquire Now →</button>
+                    <p class="text-sm text-slate-500 mb-4">High-porosity moisture adsorption.</p>
                 </div>
-                <div class="group border-b-2 border-transparent hover:border-sky-500 transition-all pb-6">
+                <div class="group">
                     <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
-                        <img src="chlorine_guard.jpg" alt="Chlorine Guards" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
+                        <img src="chlorine_guard.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-black uppercase mb-2">Chlorine Guards</h3>
-                    <p class="text-sm text-slate-500 mb-6">Critical anti-corrosion agents for downstream compressor and equipment protection.</p>
-                    <button onclick="showPage('inquiry')" class="text-xs font-bold text-sky-600 tracking-widest uppercase hover:text-black">Inquire Now →</button>
+                    <p class="text-sm text-slate-500 mb-4">Anti-corrosion neutralizing agents.</p>
                 </div>
-                <div class="group border-b-2 border-transparent hover:border-sky-500 transition-all pb-6">
+                <div class="group">
                     <div class="h-64 bg-slate-100 mb-6 overflow-hidden border-b-4 border-black">
-                        <img src="catalyst_carriers.jpg" alt="Catalyst Carriers" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
+                        <img src="catalyst_carriers.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
                     </div>
                     <h3 class="text-xl font-black uppercase mb-2">Catalyst Carriers</h3>
-                    <p class="text-sm text-slate-500 mb-6">High-surface area structural skeletons designed for selective hydrogenation.</p>
-                    <button onclick="showPage('inquiry')" class="text-xs font-bold text-sky-600 tracking-widest uppercase hover:text-black">Inquire Now →</button>
+                    <p class="text-sm text-slate-500 mb-4">Structural skeletons for catalysts.</p>
                 </div>
             </div>
         </section>
 
         <section id="inquiry" class="page-content py-16 md:py-24">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-black mb-4 brand-font text-black-force uppercase">Product Inquiry</h2>
-                <p class="text-slate-500 mb-12 font-medium">Please provide your details and our technical team will contact you shortly.</p>
-                
-                <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <input type="hidden" name="form-name" value="contact">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-black brand-font text-black-force uppercase mb-10">Inquiry</h2>
+                <form name="inquiry-form" method="POST" data-netlify="true" class="space-y-6">
+                    <input type="hidden" name="form-name" value="inquiry-form">
                     
-                    <div class="flex flex-col">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-sky-600">Company Name</label>
-                        <input type="text" name="company" required class="form-input" placeholder="Enter Company Name">
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Company Name</label>
+                        <input type="text" name="company" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
                     </div>
                     
-                    <div class="flex flex-col">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-sky-600">Contact Number</label>
-                        <input type="tel" name="phone" required class="form-input" placeholder="+91 XXXXX XXXXX">
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Contact Number</label>
+                        <input type="tel" name="phone" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
                     </div>
-
-                    <div class="flex flex-col md:col-span-2">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-sky-600">Email Address</label>
-                        <input type="email" name="email" required class="form-input" placeholder="example@company.com">
+                    
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Email Address</label>
+                        <input type="email" name="email" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
                     </div>
-
-                    <div class="flex flex-col md:col-span-2">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-sky-600">Details of Inquiry</label>
-                        <textarea name="details" rows="5" required class="form-input" placeholder="Quantity required, specific grade, or application details..."></textarea>
+                    
+                    <div>
+                        <label class="block text-xs font-bold uppercase mb-2">Details of Inquiry</label>
+                        <textarea name="details" rows="5" required class="w-full border-2 border-black p-4 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
                     </div>
-
-                    <div class="md:col-span-2 pt-4">
-                        <button type="submit" class="bg-black text-white px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-sky-500 transition-all w-full md:w-auto">
-                            Submit Request
-                        </button>
-                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-black text-white font-black uppercase tracking-widest hover:bg-sky-600 transition-all">Submit Inquiry</button>
                 </form>
-            </div>
-        </section>
-
-        <section id="contact-info" class="py-16 border-t-2 border-slate-100">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="contact-card">
-                    <h1 class="contact-name">DARREN</h1>
-                    <p class="contact-title">CEO</p>
-                    <span class="text-sm font-semibold">90224 30219</span>
-                </div>
-                <div class="contact-card">
-                    <h1 class="contact-name">RYAN</h1>
-                    <p class="contact-title">CEO</p>
-                    <span class="text-sm font-semibold">93725 38659</span>
-                </div>
-                <div class="contact-card">
-                    <h1 class="contact-name">AADAN</h1>
-                    <p class="contact-title">CEO</p>
-                    <span class="text-sm font-semibold">88500 88922</span>
-                </div>
-                <div class="contact-card">
-                    <h1 class="contact-name">RAMON</h1>
-                    <p class="contact-title">CEO</p>
-                    <span class="text-sm font-semibold">86572 62715</span>
-                </div>
-            </div>
-            <div class="mt-12 text-center">
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Official Email</p>
-                <p class="text-lg font-black">rarchemicalsllp@gmail.com</p>
             </div>
         </section>
 
