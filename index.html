@@ -15,8 +15,28 @@
         .active { display: block; }
         .text-black-force { color: #000000 !important; }
 
-        /* Styling for Inquiry Inputs */
-        input:focus, textarea:focus { border-color: #0ea5e9; }
+        .contact-card {
+            border-left: 10px solid #121619;
+            padding-left: 20px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .contact-name {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #121619;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .contact-title {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -106,33 +126,67 @@
         </section>
 
         <section id="inquiry" class="page-content py-16 md:py-24">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-black brand-font text-black-force uppercase mb-10">Inquiry</h2>
-                <form name="inquiry-form" method="POST" data-netlify="true" class="space-y-6">
-                    <input type="hidden" name="form-name" value="inquiry-form">
-                    
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2">Company Name</label>
-                        <input type="text" name="company" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black brand-font text-black-force uppercase mb-10">Inquiry</h2>
+                    <form id="inquiry-form" method="POST" data-netlify="true" class="space-y-6">
+                        <input type="hidden" name="form-name" value="inquiry-form">
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase mb-2">Company Name</label>
+                            <input type="text" name="company" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase mb-2">Contact Number</label>
+                            <input type="tel" name="phone" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase mb-2">Details of Inquiry</label>
+                            <textarea name="details" rows="5" required class="w-full border-2 border-black p-4 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-black text-white font-black uppercase tracking-widest hover:bg-sky-600 transition-all">Submit Inquiry</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-black mb-10 brand-font text-black-force uppercase">Our Team</h2>
+                    <div class="space-y-8">
+                        <div class="contact-card">
+                            <h1 class="contact-name">DARREN CHETTIAR</h1>
+                            <p class="contact-title">Chief Executive Officer</p>
+                            <p class="text-sm font-semibold">📞 +91 90224 30219</p>
+                        </div>
+                        <div class="contact-card">
+                            <h1 class="contact-name">RYAN CHETTIAR</h1>
+                            <p class="contact-title">Chief Executive Officer</p>
+                            <p class="text-sm font-semibold">📞 +91 93725 38659</p>
+                        </div>
+                        <div class="contact-card">
+                            <h1 class="contact-name">AADAN CHETTIAR</h1>
+                            <p class="contact-title">Chief Executive Officer</p>
+                            <p class="text-sm font-semibold">📞 +91 88500 88922</p>
+                        </div>
+                        <div class="contact-card">
+                            <h1 class="contact-name">RAMON CHETTIAR</h1>
+                            <p class="contact-title">Chief Executive Officer</p>
+                            <p class="text-sm font-semibold">📞 +91 86572 62715</p>
+                        </div>
                     </div>
                     
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2">Contact Number</label>
-                        <input type="tel" name="phone" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
+                    <div class="mt-12 pt-6 border-t-2 border-slate-100">
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-sky-600 mb-2">Headoffice</h4>
+                        <p class="text-sm font-bold uppercase">OFFICE NO. 3 TAKPADA MAKWANA ROAD, MUMBAI 400059.</p>
+                        <p class="text-sm font-bold mt-2">rarchemicalspvtltd.in@gmail.com</p>
                     </div>
-                    
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full border-b-2 border-black p-2 focus:outline-none focus:border-sky-500 transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-xs font-bold uppercase mb-2">Details of Inquiry</label>
-                        <textarea name="details" rows="5" required class="w-full border-2 border-black p-4 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full py-4 bg-black text-white font-black uppercase tracking-widest hover:bg-sky-600 transition-all">Submit Inquiry</button>
-                </form>
+                </div>
             </div>
         </section>
 
@@ -148,6 +202,26 @@
             document.getElementById(pageId).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Script to prevent the blank page on form submission
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+            
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                alert("Thank you! Your inquiry has been submitted. We will contact you shortly.");
+                myForm.reset();
+            })
+            .catch((error) => alert(error));
+        };
+
+        document.getElementById("inquiry-form").addEventListener("submit", handleSubmit);
     </script>
 </body>
 </html>
